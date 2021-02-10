@@ -13,11 +13,12 @@
 
         <!-- You can turn off the avatar in _config.yml by setting to false -->
         {% if site.resume_avatar == 'true' %}
-        <img src="images/avatar.jpg" alt="my photo" class="avatar no-print" itemprop="image">
+        <img src="images/avatar.jpg" alt="foto av mig" class="avatar no-print" itemprop="image">
         {% endif %}
 
         <!-- Your name is defined in the _config.yml file -->
-        <h1 class="header-name" itemprop="name">{{ site.resume_name }}</h1>
+        <h1 class="header-name" itemprop="name"><a href="https://github.com/pownas" class="header-name"></a>{{ site.resume_name }}</a></h1>
+        <h3 class="header-full-name" itemprop="full-name">{{ site.resume_full_name }}</h3>
 
         <!-- To display contact info here, change `display_header_contact_info` value in _config.yml to true -->
         {% if site.display_header_contact_info == 'true' %}
@@ -37,14 +38,16 @@
 
         <div class="executive-summary" itemprop="description">
           {{ site.resume_header_intro }}
-        </div>
 
-        {% if site.resume_looking_for_work == 'yes' %}
-        <a href="mailto:{{ site.resume_contact_email }}" class="contact-button no-print" itemprop="email">Contact me</a>
-        {% elsif site.resume_looking_for_work == 'no' %}
-        <a class="contact-button not-looking no-print">I'm not looking for work right now.</a>
-        {% else %}
-        {% endif %}
+        <div>
+          {% if site.resume_looking_for_work == 'yes' %}
+          <a href="mailto:{{ site.resume_contact_email }}" class="contact-button no-print" itemprop="email">Contact me</a>
+          {% elsif site.resume_looking_for_work == 'no' %}
+          <a class="contact-button not-looking no-print">I'm not looking for work,<br /> right now.</a>
+          {% else %}
+          {% endif %}
+        </div>
+        </div>
 
       </header>
 
@@ -53,7 +56,7 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Experience</h2>
+          <h2>Erfarenheter</h2>
         </header>
 
         {% for job in site.data.experience %}
@@ -73,7 +76,7 @@
       <!-- begin Education -->
       <section class="content-section">
         <header class="section-header">
-          <h2>Education</h2>
+          <h2>Utbildning</h2>
         </header>
 
         {% for education in site.data.education %}
@@ -101,7 +104,7 @@
       <!-- begin Projects -->
       <section class="content-section">
         <header class="section-header">
-          <h2>Projects</h2>
+          <h2>Projekt</h2>
         </header>
 
         {% for project in site.data.projects %}
@@ -122,7 +125,7 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Skills</h2>
+          <h2>Färdigheter</h2>
         </header>
         {% for skill in site.data.skills %}
         <div class="resume-item">
@@ -140,7 +143,7 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Recognition</h2>
+          <h2>Utmärkelser</h2>
         </header>
 
         {% for recognition in site.data.recognitions %}
@@ -160,7 +163,7 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Associations</h2>
+          <h2>Föreningar</h2>
         </header>
 
         {% for association in site.data.associations %}
@@ -180,7 +183,7 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Outside Interests</h2>
+          <h2>Andra intressen</h2>
         </header>
 
         <div class="resume-item">
@@ -200,7 +203,7 @@
       <section class="content-section">
 
         <header class="section-header">
-          <h2>Additional Links</h2>
+          <h2>Övriga länkar</h2>
         </header>
 
         <div class="resume-item">
@@ -220,7 +223,7 @@
       <section class="content-section print-only">
 
         <header class="section-header">
-          <h2>Social Links</h2>
+          <h2>Sociala medier</h2>
         </header>
 
         <div class="resume-item">
@@ -232,8 +235,8 @@
       {% endif %}
 
       <footer class="page-footer">
-        <p class="footer-line">Made by <a href="http://twitter.com/jglovier">@jglovier</a>. Fork me on <a href="https://github.com/jglovier/resume-template">GitHub</a>.</p>
-        <p class="footer-line">If this is your live resume, you can modify or remove this part. ;-)</p>
+        <p class="footer-line">Skapad med ❤ av <a href="http://twitter.com/pownas">@pownas</a>. Forka denna sidan via: <a href="https://github.com/pownas/resume-swedish-template">GitHub</a>.</p>
+        <p class="footer-line">Om detta är din live-resume, så borde du uppdatera även denna layout-sidan ;)</p>
       </footer>
 
     </div>
